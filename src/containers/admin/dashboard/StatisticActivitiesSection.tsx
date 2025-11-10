@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
-import { Cell, Pie, PieChart } from "recharts";
+import { ChartPieDonutActive } from "@/components/ui/pieChart";
+
 
 export default function StatisticActivitiesSection() {
   const activityItem = [
@@ -9,12 +10,10 @@ export default function StatisticActivitiesSection() {
     { title: "Guru Paling Aktif", value: "Budi (12 aktivitas)" },
   ];
 
-  const data = [
-    { name: "Aktif", value: 80 },
-    { name: "Tidak Aktif", value: 20 },
+  const dataActiveTeacher = [
+    { name: "Aktif", value: 80, fill: "#3B82F6" },
+    { name: "Tidak Aktif", value: 20, fill: "#0EA5E9" },
   ];
-
-  const COLORS = ["#3b82f6", "#e5e7eb"];
 
   return (
     <section>
@@ -37,7 +36,7 @@ export default function StatisticActivitiesSection() {
           </div>
           <div className="w-full border border-gray-300 rounded-md shadow flex justify-between">
             <div className="text-xs border w-full space-y-10 p-10 flex justify-center flex-col">
-              {data.map((item) => (
+              {dataActiveTeacher.map((item) => (
                 <div key={item.name} className="w-full">
                   <p>{`Guru ${item.name}`}</p>
                   <div className="w-full bg-blue-200/50 text-blue-500 text-center rounded-full">
@@ -46,31 +45,7 @@ export default function StatisticActivitiesSection() {
                 </div>
               ))}
             </div>
-            <PieChart width={'100%'} height={'100%'}>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                innerRadius={50}
-                outerRadius={80}
-                startAngle={90}
-                endAngle={-270}
-                dataKey="value"
-              >
-                {data.map((entry, idx) => (
-                  <Cell key={`cell-${idx}`} fill={COLORS[idx]} />
-                ))}
-              </Pie>
-              <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                className="text-lg font-bold fill-blue-600"
-              >
-                80%
-              </text>
-            </PieChart>
+            <ChartPieDonutActive chartData={dataActiveTeacher} label={false} />
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import OverviewCard from "./components/fragments/OverviewCard";
+import Card from "@/components/ui/card";
 
 export default function SchoolOverviewSection() {
   const cardItem = [
@@ -30,7 +30,11 @@ export default function SchoolOverviewSection() {
 
   return (
     <section>
-      <OverviewCard items={cardItem} />
+      <div className="flex justify-between items-center p-5 gap-2">
+        {cardItem.map((item) => (
+          <Card key={item.title} item={item} />
+        ))}
+      </div>
     </section>
   );
 }

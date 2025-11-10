@@ -66,7 +66,7 @@ export default function ListNav({ onClose }: ListNavProps) {
         </div>
       </div>
       <div className="flex flex-col text-xs overflow-auto">
-        {links.map((link) => (
+        { pathname.startsWith("/admin") && links.admin.map((link) => (
           <Link
             key={link.name}
             href={link.href}
@@ -78,7 +78,20 @@ export default function ListNav({ onClose }: ListNavProps) {
           >
             {link.name}
           </Link>
-        ))}
+        ))  }
+        { pathname.startsWith("/teacher") && links.teacher.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            className={`p-5 border-b hover:text-black hover:bg-gray-200  rounded-lg ${
+              pathname === link.href
+                ? "text-black bg-gray-200"
+                : "text-gray-500"
+            }`}
+          >
+            {link.name}
+          </Link>
+        ))  }
       </div>
     </nav>
   );
