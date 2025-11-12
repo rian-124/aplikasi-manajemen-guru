@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type BodyCardProps = {
   value: number;
-  change: string;
+  change?: string;
   icon: string;
 };
 

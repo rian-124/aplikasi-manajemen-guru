@@ -43,7 +43,7 @@ type Action = {
 type DataTableProps<Tdata> = {
   data: Tdata[];
   columns: ColumnDef<Tdata>[];
-  settingsSearch: {
+  settingsSearch?: {
     searchText: string;
     filterKey: string;
   };
@@ -54,6 +54,8 @@ type DataTableProps<Tdata> = {
   onDetailClick?: (rowData: Tdata) => void;
   isAction?: boolean;
   settingsAction?: Action;
+  isFilterColumn?: boolean;
+  isPagination?: boolean;
 };
 
 export function DataTable<Tdata>({
@@ -64,6 +66,8 @@ export function DataTable<Tdata>({
   onDetailClick,
   isAction = true,
   settingsAction,
+  isFilterColumn,
+  isPagination = true,
 }: DataTableProps<Tdata>) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -97,7 +101,8 @@ export function DataTable<Tdata>({
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
-        <Input
+        {
+          settingsSearch && <Input
           placeholder={settingsSearch.searchText}
           value={(table.getColumn(settingsSearch.filterKey)?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
@@ -105,7 +110,9 @@ export function DataTable<Tdata>({
           }
           className="max-w-sm"
         />
-        <DropdownMenu>
+        }
+        {
+          isFilterColumn && <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
               Columns <ChevronDown />
@@ -131,6 +138,7 @@ export function DataTable<Tdata>({
               })}
           </DropdownMenuContent>
         </DropdownMenu>
+        }
       </div>
       <div className="overflow-hidden rounded-md border">
         <Table>
@@ -222,7 +230,8 @@ export function DataTable<Tdata>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
+      {
+        isPagination && <div className="flex items-center justify-end space-x-2 py-4">
         <div className="text-muted-foreground flex-1 text-sm">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
@@ -246,6 +255,7 @@ export function DataTable<Tdata>({
           </Button>
         </div>
       </div>
+      }
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

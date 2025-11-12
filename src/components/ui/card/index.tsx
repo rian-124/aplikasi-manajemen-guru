@@ -6,7 +6,7 @@ type CardProps = {
   item: {
     title: string;
     value: number;
-    change: string;
+    change?: string;
     icon: string;
   };
 };

@@ -15,8 +15,10 @@ import {
   ChartTooltipContent,
 } from "../chart/chart";
 
-type ChartBarLabel = {
-  chartData: { class: string; value: string }[];
+type ChartBarLabelProps<Cdata> = {
+  chartData: Cdata[];
+  xKey: keyof Cdata;
+  yKey: keyof Cdata;
 };
 
 export const description = "A bar chart with a label";
@@ -28,7 +30,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartBarLabel({ chartData }: ChartBarLabel) {
+export function ChartBarLabel<Cdata>({ chartData, xKey, yKey }: ChartBarLabelProps<Cdata>) {
   return (
     <ChartContainer config={chartConfig}>
       <BarChart
@@ -46,7 +48,7 @@ export function ChartBarLabel({ chartData }: ChartBarLabel) {
           tick={{ fontSize: 12 }}
         />
         <XAxis
-          dataKey="class"
+          dataKey={xKey as string}
           tickLine={false}
           tickMargin={10}
           axisLine={false}
@@ -56,7 +58,7 @@ export function ChartBarLabel({ chartData }: ChartBarLabel) {
           cursor={false}
           content={<ChartTooltipContent hideLabel />}
         />
-        <Bar dataKey="value" fill="var(--color-desktop)" radius={9}>
+        <Bar dataKey={yKey as string} fill="var(--color-desktop)" radius={9}>
           <LabelList
             position="top"
             offset={0}

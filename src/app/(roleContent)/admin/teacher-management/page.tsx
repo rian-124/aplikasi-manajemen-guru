@@ -4,7 +4,6 @@ import { DataTable } from "@/components/ui/dataTable";
 import { DetailData } from "@/components/ui/detailData";
 import TeacherForm from "@/components/ui/forms/TeacherForms";
 import { ColumnDef } from "@tanstack/react-table";
-import { Edit } from "lucide-react";
 import { useState } from "react";
 
 type Guru = {
