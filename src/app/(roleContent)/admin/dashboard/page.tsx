@@ -5,11 +5,10 @@ import SchoolOverviewSection from "@/containers/admin/dashboard/SchoolOverviewSe
 import StatisticActivitiesSection from "@/containers/admin/dashboard/StatisticActivitiesSection";
 
 export default function Dashboard() {
-
   return (
     <main className="p-5 space-y-5">
-        <SchoolOverviewSection cardItem={cardItem.dashboardAdmin} />
-        <StatisticActivitiesSection />
+      <SchoolOverviewSection cardItem={cardItem.dashboardAdmin} />
+      <StatisticActivitiesSection />
     </main>
   );
 }

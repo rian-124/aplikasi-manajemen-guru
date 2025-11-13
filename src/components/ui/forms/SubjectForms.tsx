@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type SubjectFormProps = {
+export type SubjectFormProps = {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   rowData: {
     name?: string;

@@ -2,7 +2,7 @@ import Card from "@/components/ui/card";
 import { CardItem } from "@/types/cardItem";
 
 type SchoolOverviewSectionProps = {
-  cardItem: CardItem[];
+  cardItem: CardItem[] | [];
 }
 
 export default function SchoolOverviewSection({cardItem} : SchoolOverviewSectionProps) {

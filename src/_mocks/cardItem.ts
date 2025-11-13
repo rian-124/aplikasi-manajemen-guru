@@ -25,4 +25,24 @@ export const cardItem = {
       icon: "/icons/teacher-icon.svg",
     },
   ],
+  statisticReport: [
+    {
+      title: "Total Guru",
+      value: 15,
+      change: "2.00%",
+      icon: "/icons/teacher-icon.svg",
+    },
+    {
+      title: "Total Kelas",
+      value: 12,
+      change: "1.50%",
+      icon: "/icons/teacher-icon.svg",
+    },
+    {
+      title: "Mata Pelajaran",
+      value: 8,
+      change: "1.20%",
+      icon: "/icons/teacher-icon.svg",
+    },
+  ],
 };
