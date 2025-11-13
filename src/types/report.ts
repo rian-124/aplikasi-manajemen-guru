@@ -14,5 +14,5 @@ export type AverageClass = {
 export type SubjectReport = {
   name: string;
   value: number;
-  fill?: string;
+  fill: string;
 };

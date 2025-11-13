@@ -6,6 +6,7 @@ import {
   reportColumns,
 } from "@/_mocks/report";
 import StatisticReportContainer from "@/containers/admin/statisticReport/StatisticReportContainer";
+import { SubjectReport } from "@/types/report";
 
 export default function StatisticReport() {
   const randomColor = () => {
@@ -19,7 +20,7 @@ export default function StatisticReport() {
   const subjectReportRandomColor = dataSubjectReport.map((item) => ({
     ...item,
     fill: randomColor(),
-  }));
+  }))  ;
 
   return (
     <main>
