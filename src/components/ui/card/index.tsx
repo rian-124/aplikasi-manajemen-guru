@@ -1,14 +1,10 @@
 import React from "react";
 import TitleCard from "./TitleCard";
 import BodyCard from "./BodyCard";
+import { CardItem } from "@/types/cardItem";
 
 type CardProps = {
-  item: {
-    title: string;
-    value: number;
-    change?: string;
-    icon: string;
-  };
+  item: CardItem;
 };
 
 export default function Card({ item }: CardProps) {

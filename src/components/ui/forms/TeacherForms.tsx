@@ -1,13 +1,9 @@
+import { Teacher } from "@/types/teacher";
 import { useEffect, useState } from "react";
 
-type TeacherFormProps = {
+export type TeacherFormProps = {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  rowData: {
-    nip?: string;
-    name?: string;
-    subject?: string;
-    class?: string;
-  } | null;
+  rowData: Teacher | null;
 };
 
 export default function TeacherForm({
