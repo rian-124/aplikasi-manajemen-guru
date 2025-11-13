@@ -15,7 +15,7 @@ type ChartPieDonutActiveProps = {
   dotLegend?: boolean;
   title?: string;
   label: boolean;
-  chartData: { name: string; value: number; fill: string }[];
+  chartData: { name: string; value: number; fill?: string }[];
 };
 
 const chartConfig = {
