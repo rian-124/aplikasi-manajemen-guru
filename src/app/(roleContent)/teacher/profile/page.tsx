@@ -24,7 +24,12 @@ export default function Profile() {
           </div>
           <div className="space-x-5">
             <Button>Edit profil</Button>
-            <Link href={"/teacher/dashboard"} className="p-3 bg-black text-white rounded-lg text-sm">Kembali</Link>
+            <Link
+              href={"/teacher/dashboard"}
+              className="p-3 bg-black text-white rounded-lg text-sm"
+            >
+              Kembali
+            </Link>
           </div>
         </div>
         <div>
@@ -35,23 +40,41 @@ export default function Profile() {
           </div>
         </div>
         <div>
-            <form action="" className="space-y-3">
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input id="email" name="email" type="email" className="border block rounded-md w-full p-2" placeholder="example@gmail.com" />
-                </div>
-                <div className="flex justify-between gap-3">
-                    <div className="w-1/2">
-                    <label htmlFor="email">Nomor Handphone</label>
-                    <input id="email" name="email" type="email" className="border block rounded-md w-full p-2" placeholder="+62 08918281929" />
-                </div>
-                <div className="w-1/2">
-                    <label htmlFor="handphone">Foto Profil</label>
-                    <input id="foto_profil" name="foto_profil" type="file" className="border block rounded-md w-full p-2 file:bg-blue-500 file:p-2 file:rounded-md file:text-white file:cursor-pointer text-xs" placeholder="example@gmail.com" />
-                </div>
-                </div>
-                <Button className="w-full">Simpan</Button>
-            </form>
+          <form action="" className="space-y-3">
+            <div>
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className="border block rounded-md w-full p-2"
+                placeholder="example@gmail.com"
+              />
+            </div>
+            <div className="flex justify-between gap-3">
+              <div className="w-1/2">
+                <label htmlFor="email">Nomor Handphone</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="border block rounded-md w-full p-2"
+                  placeholder="+62 08918281929"
+                />
+              </div>
+              <div className="w-1/2">
+                <label htmlFor="handphone">Foto Profil</label>
+                <input
+                  id="foto_profil"
+                  name="foto_profil"
+                  type="file"
+                  className="border block rounded-md w-full p-2 file:bg-blue-500 file:p-2 file:rounded-md file:text-white file:cursor-pointer text-xs"
+                  placeholder="example@gmail.com"
+                />
+              </div>
+            </div>
+            <Button className="w-full">Simpan</Button>
+          </form>
         </div>
       </div>
     </section>

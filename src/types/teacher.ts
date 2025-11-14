@@ -5,3 +5,8 @@ export type Teacher = {
   subject: string;
   class: string;
 };
+
+export type ActiveTeacher = {
+  title: string;
+  value: string;
+}

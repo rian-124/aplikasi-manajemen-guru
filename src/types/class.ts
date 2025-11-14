@@ -5,3 +5,8 @@ export type Class = {
   studentCount: number;
   grade: string;
 };
+
+export type ListClass = {
+  name: string;
+  student: number;
+};

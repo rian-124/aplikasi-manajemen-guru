@@ -1,4 +1,4 @@
-import { Class } from "@/types/class";
+import { Class, ListClass } from "@/types/class";
 import { ColumnDef } from "@tanstack/react-table";
 
 export const classData: Class[] = [
@@ -37,6 +37,19 @@ export const classData: Class[] = [
     studentCount: 31,
     grade: "9",
   },
+];
+
+export const listClassData: ListClass[] = [
+  { name: "X IPA 1", student: 32 },
+  { name: "X IPA 2", student: 30 },
+  { name: "XI IPS 1", student: 28 },
+  { name: "XII IPA 1", student: 31 },
+  { name: "XII IPS 2", student: 29 },
+];
+
+export const listClassColumns: ColumnDef<ListClass>[] = [
+  { accessorKey: "name", header: "Kelas" },
+  { accessorKey: "student", header: "Siswa" },
 ];
 
 export const classColumns: ColumnDef<Class>[] = [

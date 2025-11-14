@@ -8,11 +8,6 @@ export type Report = {
 
 export type AverageClass = {
   class: string;
-  value: string;
+  value: number;
 };
 
-export type SubjectReport = {
-  name: string;
-  value: number;
-  fill?: string;
-};
