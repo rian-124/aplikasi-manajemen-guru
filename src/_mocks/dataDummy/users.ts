@@ -1,0 +1,31 @@
+export const users = [
+  {
+    id: 1,
+    name: "Admin Utama",
+    email: "admin@school.com",
+    password: "hashed_admin",
+    role: "admin",
+    nip: null,
+    phone: "081234567890",
+    photo: null,
+  },
+  {
+    id: 2,
+    name: "Budi Santoso",
+    email: "budi@school.com",
+    password: "hashed_guru",
+    role: "guru",
+    nip: "1987654321",
+    phone: "081212345678",
+    photo: null,
+  },
+  {
+    id: 3,
+    name: "Siti Rahmawati",
+    email: "siti@school.com",
+    role: "guru",
+    nip: "1987654322",
+    phone: "081298765432",
+    photo: null,
+  },
+];

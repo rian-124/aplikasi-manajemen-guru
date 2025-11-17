@@ -59,3 +59,12 @@ export const classColumns: ColumnDef<Class>[] = [
   { accessorKey: "studentCount", header: "Jumlah Siswa" },
   { accessorKey: "grade", header: "Tingkat" },
 ];
+
+
+export const valueSummaryData = [
+  { grade: "Matematika", value: 85 },
+  { grade: "Bahasa Inggris", value: 90 },
+  { grade: "Fisika", value: 78 },
+  { grade: "Kimia", value: 88 },
+  { grade: "Ekonomi", value: 82 },
+];

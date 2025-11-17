@@ -1,5 +1,5 @@
 import { Schedule } from "@/types/schedule";
-import ScheduleItem from "../elements/ScheduleItem";
+import ScheduleItem from "../../../../../components/ui/scheduleItems/ScheduleItem";
 
 type TeachingScheduleProps = {
   teachingSchedule: Schedule[];
